@@ -1,0 +1,11 @@
+/* Add any other typography-related styles here */
+h1 {
+	font-family: 'Domine', serif;
+}
+
+.font-hero {
+	font-family: 'Domine', serif;
+	font-size: 2rem;
+	line-height: 2;
+	font-weight: 400;
+}
