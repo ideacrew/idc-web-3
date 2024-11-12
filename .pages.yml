@@ -1,5 +1,6 @@
 media:
   input: public/images
+  output: /
 content:
   - name: about
     label: About page
