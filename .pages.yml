@@ -2,4 +2,4 @@ content:
   - name: pages
     label: Pages
     path: src/pages
-    type: collection
+    type: document
