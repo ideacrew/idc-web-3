@@ -10,7 +10,6 @@ const { PUBLIC_SANITY_STUDIO_PROJECT_ID, PUBLIC_SANITY_STUDIO_DATASET } = loadEn
 	process.cwd(),
 	''
 )
-import react from '@astrojs/react'
 
 export default defineConfig({
 	output: 'hybrid',

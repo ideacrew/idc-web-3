@@ -30,6 +30,62 @@ export default defineConfig({
 					},
 				],
 			},
+			{
+				type: 'document',
+				name: 'homePage',
+				title: 'Home Page',
+				fields: [
+					{
+						name: 'heroTitle',
+						title: 'Hero Title',
+						type: 'string',
+						description: 'The main heading text on the home page',
+					},
+					{
+						name: 'backgroundImage',
+						title: 'Background Image',
+						type: 'image',
+						description: 'The background image for the hero section',
+						options: {
+							hotspot: true,
+						},
+					},
+					{
+						name: 'primaryButton',
+						title: 'Primary Button',
+						type: 'object',
+						fields: [
+							{
+								name: 'text',
+								title: 'Button Text',
+								type: 'string',
+							},
+							{
+								name: 'link',
+								title: 'Button Link',
+								type: 'string',
+							},
+						],
+					},
+					{
+						name: 'secondaryButton',
+						title: 'Secondary Button',
+						type: 'object',
+						fields: [
+							{
+								name: 'text',
+								title: 'Button Text',
+								type: 'string',
+							},
+							{
+								name: 'link',
+								title: 'Button Link',
+								type: 'string',
+							},
+						],
+					},
+				],
+			},
 		],
 	},
 })

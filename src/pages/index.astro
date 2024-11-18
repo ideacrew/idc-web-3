@@ -1,46 +1,95 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
-import { buttonVariants } from "@/components/ui/button"
+import MainLayout from '../layouts/MainLayout.astro'
+import { buttonVariants } from '@/components/ui/button'
+import { createClient } from '@sanity/client'
+import imageUrlBuilder from '@sanity/image-url'
+import sanityConfig from '../../sanity.config'
+
+const client = createClient(sanityConfig)
+const builder = imageUrlBuilder(client)
+const homePage = await client.fetch(`*[_type == "homePage"][0]`)
 ---
 
-<MainLayout title="IDEACREW - Strategy & Technology Solutions" fullWidth={true}>
-  <div class="bg-image absolute inset-0 z-0"></div>
-  <div class="relative z-10 flex items-center min-h-[calc(100vh-4rem)] max-w-[960px] mx-auto w-full">
-    <div class="absolute inset-0">
-      <svg class="w-full h-full" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-            <circle cx="1" cy="1" r="1" fill="#3B82F6" fill-opacity="0.1" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#grid)" />
-        <path d="M0,500 Q250,300 500,500 T1000,500" fill="none" stroke="#3B82F6" stroke-width="2" stroke-opacity="0.2" />
-      </svg>
-    </div>
+<MainLayout
+	title="IDEACREW - Strategy & Technology Solutions"
+	fullWidth={true}
+>
+	<div class="bg-image absolute inset-0 z-0">
+		{
+			homePage?.backgroundImage && (
+				<img
+					src={builder.image(homePage.backgroundImage).url()}
+					alt="Background"
+					class="w-full h-full object-cover"
+				/>
+			)
+		}
+	</div>
+	<div class="relative z-10 flex items-center min-h-[calc(100vh-4rem)] max-w-[960px] mx-auto w-full">
+		<div class="absolute inset-0">
+			<svg
+				class="w-full h-full"
+				viewBox="0 0 1000 1000"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<defs>
+					<pattern
+						id="grid"
+						width="20"
+						height="20"
+						patternUnits="userSpaceOnUse"
+					>
+						<circle
+							cx="1"
+							cy="1"
+							r="1"
+							fill="#3B82F6"
+							fill-opacity="0.1"
+						></circle>
+					</pattern>
+				</defs>
+				<rect
+					width="100%"
+					height="100%"
+					fill="url(#grid)"
+				></rect>
+				<path
+					d="M0,500 Q250,300 500,500 T1000,500"
+					fill="none"
+					stroke="#3B82F6"
+					stroke-width="2"
+					stroke-opacity="0.2"
+				></path>
+			</svg>
+		</div>
 
-    <div class="z-10 px-4">
-      <h1 class="text-4xl md:text-5xl text-gray-800 mb-6 max-w-3xl mx-auto font-hero">
-        Strategy & technology solutions that help our clients solve their most important challenges
-      </h1>
-      <div class="flex  space-x-4">
-
-
-        <a href="/contact" class={buttonVariants({ variant: "outline", size: "lg" })}>
-          Get in Touch
-        </a>
-        <a href="/sbm" class={buttonVariants({ variant: "default", size: "lg" })}>
-          State-Based Marketplace
-        </a>
-      </div>
-    </div>
-  </div>
+		<div class="z-10 px-4">
+			<h1 class="text-4xl md:text-5xl text-gray-800 mb-6 max-w-3xl mx-auto font-hero">
+				{homePage?.heroTitle}
+			</h1>
+			<div class="flex space-x-4">
+				<a
+					href={homePage?.primaryButton?.link}
+					class={buttonVariants({ variant: 'outline', size: 'lg' })}
+				>
+					{homePage?.primaryButton?.text}
+				</a>
+				<a
+					href={homePage?.secondaryButton?.link}
+					class={buttonVariants({ variant: 'default', size: 'lg' })}
+				>
+					{homePage?.secondaryButton?.text}
+				</a>
+			</div>
+		</div>
+	</div>
 </MainLayout>
 
 <style>
-  .bg-image {
-    background-image: url('/background.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
+	.bg-image {
+		background-image: url('/background.webp');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
 </style>
