@@ -3,4 +3,5 @@ content:
   - name: pages
     label: Pages
     type: file
-    path: content/pages
+    path: content/pages/aboutus.md
+    
