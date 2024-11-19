@@ -2,5 +2,5 @@ media: public/images
 content:
   - name: pages
     label: Pages
-    type: collection
+    type: document
     path: content/pages
