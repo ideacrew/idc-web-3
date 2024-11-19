@@ -4,10 +4,3 @@ content:
     label: Pages
     type: collection
     path: content/pages
-    list: true
-    view:
-      fields: [title, weight]
-    fields:
-      - { name: title, label: Title, type: string }
-      - { name: weight, label: Order, type: number }
-      - { name: body, label: Body, type: rich-text }
