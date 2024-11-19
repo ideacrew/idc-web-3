@@ -4,3 +4,9 @@ content:
     label: Pages
     type: file
     path: src/pages/aboutus.md
+    fields:
+      - name: title
+        label: Title
+        type: string
+        
+        
