@@ -1,13 +1,9 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro'
 import { buttonVariants } from '@/components/ui/button'
-import { createClient } from '@sanity/client'
-import imageUrlBuilder from '@sanity/image-url'
-import sanityConfig from '../../sanity.config'
+import { Image } from 'astro:assets'
 
-const client = createClient(sanityConfig)
-const builder = imageUrlBuilder(client)
-const homePage = await client.fetch(`*[_type == "homePage"][0]`)
+const imageUrl = '/background.webp'
 ---
 
 <MainLayout
@@ -15,15 +11,15 @@ const homePage = await client.fetch(`*[_type == "homePage"][0]`)
 	fullWidth={true}
 >
 	<div class="bg-image absolute inset-0 z-0">
-		{
-			homePage?.backgroundImage && (
-				<img
-					src={builder.image(homePage.backgroundImage).url()}
-					alt="Background"
-					class="w-full h-full object-cover"
-				/>
-			)
-		}
+		<Image
+			src={imageUrl}
+			alt="Background"
+			width={1920}
+			height={1080}
+			class="w-full h-full object-cover"
+			loading="eager"
+			fetchpriority="high"
+		/>
 	</div>
 	<div class="relative z-10 flex items-center min-h-[calc(100vh-4rem)] max-w-[960px] mx-auto w-full">
 		<div class="absolute inset-0">
@@ -65,20 +61,20 @@ const homePage = await client.fetch(`*[_type == "homePage"][0]`)
 
 		<div class="z-10 px-4">
 			<h1 class="text-4xl md:text-5xl text-gray-800 mb-6 max-w-3xl mx-auto font-hero">
-				{homePage?.heroTitle}
+				Strategy & technology solutions that help our clients solve their most important challenges
 			</h1>
 			<div class="flex space-x-4">
 				<a
-					href={homePage?.primaryButton?.link}
+					href="/contact"
 					class={buttonVariants({ variant: 'outline', size: 'lg' })}
 				>
-					{homePage?.primaryButton?.text}
+					Get in Touch
 				</a>
 				<a
-					href={homePage?.secondaryButton?.link}
+					href="/state-based-marketplace"
 					class={buttonVariants({ variant: 'default', size: 'lg' })}
 				>
-					{homePage?.secondaryButton?.text}
+					State-Based Marketplace
 				</a>
 			</div>
 		</div>
