@@ -9,8 +9,3 @@ content:
         label: Title
         type: string
       - { name: body, label: Body, type: rich-text }
-        
-        
-
-        
-        

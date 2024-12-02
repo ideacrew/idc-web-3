@@ -1,91 +1,222 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro'
-import { buttonVariants } from '@/components/ui/button'
+import { Button } from '@/components/ui/button'
 import { Image } from 'astro:assets'
 
 const imageUrl = '/background.webp'
+const ctaImageUrl = '/image_1.png'
+
+const services = [
+	{
+		title: 'Management Consulting',
+		description: '',
+	},
+	{
+		title: 'Software Development',
+		description: '',
+	},
+	{
+		title: 'Data Integration',
+		description: '',
+	},
+	{
+		title: 'DevOps & Cloud',
+		description: '',
+	},
+]
+
+const clients = [
+	{ name: 'DC Health Link', logo: '/logos/dc-healthlink-logo.webp' },
+	{ name: 'DC.gov', logo: '/logos/dc-gov.webp' },
+	{ name: 'Connect for Health Colorado', logo: '/logos/connect-health-colorado.webp' },
+	{ name: 'MA Health Connector', logo: '/logos/massachusetts-health-connector.webp' },
+	{ name: 'FEMA', logo: '/logos/fema.webp' },
+	{ name: 'Pennsylvania DHS', logo: '/logos/pennsylvania-department-human-services.webp' },
+	{ name: 'Maryland DOH', logo: '/logos/maryland-department-health.webp' },
+	{ name: 'Montgomery County', logo: '/logos/montgomery-county-maryland.webp' },
+	{ name: 'SHVS', logo: '/logos/state-health-value-strategies.webp' },
+	{ name: 'Vermont Health Connect', logo: '/logos/vermont-health-connect.webp' },
+	{ name: 'DoDEA', logo: '/logos/dodea.webp' },
+	{ name: 'RWJF', logo: '/logos/robert-wood-johnson-foundation.webp' },
+]
 ---
 
 <MainLayout
 	title="IDEACREW - Strategy & Technology Solutions"
 	fullWidth={true}
 >
-	<div class="bg-image absolute inset-0 z-0">
-		<Image
-			src={imageUrl}
-			alt="Background"
-			width={1920}
-			height={1080}
-			class="w-full h-full object-cover"
-			loading="eager"
-			fetchpriority="high"
-		/>
-	</div>
-	<div class="relative z-10 flex items-center min-h-[calc(100vh-4rem)] max-w-[960px] mx-auto w-full">
-		<div class="absolute inset-0">
-			<svg
-				class="w-full h-full"
-				viewBox="0 0 1000 1000"
-				xmlns="http://www.w3.org/2000/svg"
-			>
-				<defs>
-					<pattern
-						id="grid"
-						width="20"
-						height="20"
-						patternUnits="userSpaceOnUse"
-					>
-						<circle
-							cx="1"
-							cy="1"
-							r="1"
-							fill="#3B82F6"
-							fill-opacity="0.1"
-						></circle>
-					</pattern>
-				</defs>
-				<rect
-					width="100%"
-					height="100%"
-					fill="url(#grid)"
-				></rect>
-				<path
-					d="M0,500 Q250,300 500,500 T1000,500"
-					fill="none"
-					stroke="#3B82F6"
-					stroke-width="2"
-					stroke-opacity="0.2"
-				></path>
-			</svg>
+	<!-- Hero Section -->
+	<section class="relative h-[634px] flex items-center pt-16">
+		<div class="bg-image absolute inset-0 z-0">
+			<Image
+				src={imageUrl}
+				alt="Background"
+				width={1920}
+				height={1080}
+				class="w-full h-full object-cover"
+				loading="eager"
+				fetchpriority="high"
+			/>
+			<div class="absolute inset-0 bg-gradient-to-b from-transparent to-white"></div>
 		</div>
+		<div class="relative z-10 flex items-center max-w-[960px] mx-auto w-full">
+			<div class="absolute inset-0">
+				<svg
+					class="w-full h-full"
+					viewBox="0 0 1000 1000"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<defs>
+						<pattern
+							id="grid"
+							width="20"
+							height="20"
+							patternUnits="userSpaceOnUse"
+						>
+							<circle
+								cx="1"
+								cy="1"
+								r="1"
+								fill="#3B82F6"
+								fill-opacity="0.1"
+							></circle>
+						</pattern>
+					</defs>
+					<rect
+						width="100%"
+						height="100%"
+						fill="url(#grid)"
+					></rect>
+					<path
+						d="M0,500 Q250,300 500,500 T1000,500"
+						fill="none"
+						stroke="#3B82F6"
+						stroke-width="2"
+						stroke-opacity="0.2"
+					></path>
+				</svg>
+			</div>
 
-		<div class="z-10 px-4">
-			<h1 class="text-4xl md:text-5xl text-gray-800 mb-6 max-w-3xl mx-auto font-hero">
-				Strategy & technology solutions that help our clients solve their most important challenges
-			</h1>
-			<div class="flex space-x-4">
-				<a
-					href="/contact"
-					class={buttonVariants({ variant: 'outline', size: 'lg' })}
-				>
-					Get in Touch
-				</a>
-				<a
-					href="/state-based-marketplace"
-					class={buttonVariants({ variant: 'default', size: 'lg' })}
-				>
-					State-Based Marketplace
-				</a>
+			<div class="z-10 px-4">
+				<h1 class="text-4xl md:text-5xl text-gray-800 mb-6 max-w-3xl mx-auto font-hero">
+					Strategy & technology solutions that help our clients solve their most important challenges
+				</h1>
+				<div class="flex space-x-4">
+					<Button
+						variant="outline"
+						size="lg"
+					>
+						<a href="/contact"> Get in Touch </a>
+					</Button>
+
+					<Button
+						variant="default"
+						size="lg"
+					>
+						<a href="/state-based-marketplace"> State-Based Marketplace </a>
+					</Button>
+				</div>
 			</div>
 		</div>
-	</div>
-</MainLayout>
+	</section>
 
-<style>
-	.bg-image {
-		background-image: url('/background.webp');
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
-	}
-</style>
+	<!-- Services Section -->
+	<section class="py-20">
+		<div class="container max-w-[960px] mx-auto w-full">
+			<h2 class="text-3xl font-serif mb-12">Our Services</h2>
+			<div class="grid md:grid-cols-2 gap-12">
+				<div class="space-y-8">
+					{
+						services.map(service => (
+							<div class="border-b border-gray-200 pb-4">
+								<h3 class="text-xl">{service.title}</h3>
+							</div>
+						))
+					}
+					<Button variant="link">
+						<a href="/services"> Learn More About Our Services </a>
+					</Button>
+				</div>
+				<div class="relative">
+					<img
+						src="/images/services-large.svg"
+						alt="Services"
+						class="w-full"
+					/>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- SBM Section -->
+	<section class="py-20 bg-gray-50">
+		<div class="container max-w-[960px] mx-auto w-full">
+			<h2 class="text-3xl font-serif mb-8">State Based Marketplace Solution</h2>
+			<div class="grid md:grid-cols-4 gap-8 mb-8">
+				{
+					['Individual', 'Employers', 'Employees', 'Brokers'].map(item => (
+						<div class="p-6 bg-white rounded border border-gray-200">
+							<h3 class="text-xl">{item}</h3>
+						</div>
+					))
+				}
+			</div>
+			<p class="max-w-3xl mb-8">
+				IdeaCrew's award winning State-based Marketplace (SBM) platform is a cloud-based, complete end-to-end
+				ACA-compliant solution for states, employers, employees and individuals to sponsor, shop and enroll in health
+				insurance and other benefits. Our platform's modular, flexible design supports different marketplace needs from
+				individuals to small business to large group enrollments.
+			</p>
+			<a
+				href="/state-based-marketplace"
+				class="text-blue-600 hover:underline"
+			>
+				Learn More About Our State Based Marketplace Solutions
+			</a>
+		</div>
+	</section>
+
+	<!-- Clients Section -->
+	<section class="py-20">
+		<div class="container max-w-[960px] mx-auto w-full">
+			<h2 class="text-3xl font-serif mb-12">Select Clients</h2>
+			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+				{
+					clients.map(client => (
+						<div class="flex items-center justify-center">
+							<Image
+								src={client.logo}
+								alt={client.name}
+								width={150}
+								height={75}
+								class="w-full h-auto object-contain grayscale hover:grayscale-0 transition-all"
+							/>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<!-- Contact CTA -->
+	<section class="relative py-20">
+		<div class="bg-image absolute inset-0 z-0 bg-blue-700">
+			<Image
+				src={ctaImageUrl}
+				alt="Background"
+				width={1920}
+				height={1080}
+				class="w-full h-full object-cover opacity-75"
+			/>
+		</div>
+		<div class="relative z-10 container flex justify-between items-center max-w-[960px] mx-auto w-full">
+			<h2 class="text-white font-cta">Ready to work together?</h2>
+			<Button
+				variant="outline"
+				size="lg"
+			>
+				<a href="/contact"> Contact Us </a>
+			</Button>
+		</div>
+	</section>
+</MainLayout>
