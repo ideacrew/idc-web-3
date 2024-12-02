@@ -3,7 +3,7 @@ content:
   - name: pages
     label: Pages
     type: file
-    path: src/pages/aboutus.md
+    path: src/pages/about.md
     fields:
       - name: title
         label: Title
