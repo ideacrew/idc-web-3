@@ -1,13 +1,8 @@
 services:
   - title: Management Consulting
-    description: ''
   - title: Software Development
-    description: ''
   - title: Data Integration
-    description: ''
   - title: DevOps & Cloud
-    description: ''
-
 clients:
   - name: DC Health Link
     logo: /images/logos/dc-healthlink-logo.webp
@@ -32,4 +27,4 @@ clients:
   - name: DoDEA
     logo: /images/logos/dodea.webp
   - name: RWJF
-    logo: /images/logos/robert-wood-johnson-foundation.webp
+    logo: /public/images/logos/robert-wood-johnson-foundation.webp
