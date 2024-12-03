@@ -52,11 +52,13 @@ content:
             list: true
             fields:
               - name: title
-                label: Title
+                label: false
                 type: string
+                
           - name: blurb
             label: Blurb
-            type: string
+            type: text
+            
           - name: link
             label: Link
             type: object
