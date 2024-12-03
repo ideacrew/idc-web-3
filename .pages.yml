@@ -1,7 +1,7 @@
 media:
   input: public/images
   output: /images
-  
+
 content:
   - name: config
     label: Home Page
@@ -15,7 +15,7 @@ content:
           - name: heading
             label: Heading
             type: string
-            
+
           - name: button1
             label: Call to Action Button 1
             type: object
@@ -26,7 +26,7 @@ content:
               - name: link
                 label: Link
                 type: string
-                
+
           - name: button2
             label: Call to Action Button 2
             type: object
@@ -37,7 +37,34 @@ content:
               - name: link
                 label: Link
                 type: string
-                
+
+      - name: sbmSection
+        label: State Based Marketplace Section
+        type: object
+        fields:
+          - name: heading
+            label: Heading
+            type: string
+
+          - name: cards
+            label: Cards
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: Title
+                type: string
+          - name: blurb
+            label: Blurb
+            type: string
+          - name: link
+            label: Link
+            type: object
+            fields:
+              - name: text
+                label: Text
+                type: string
+
       - name: services
         label: Services
         type: object
@@ -46,7 +73,7 @@ content:
           - name: title
             label: false
             type: string
-            
+
       - name: clients
         label: Select Clients
         type: object
@@ -55,7 +82,7 @@ content:
           - name: name
             label: Client Name
             type: string
-            
+
           - name: logo
             label: Logo
             type: image
@@ -71,4 +98,4 @@ content:
       - name: title
         label: Title
         type: string
-      - { name: body, label: Body, type: rich-text }              
+      - { name: body, label: Body, type: rich-text }
