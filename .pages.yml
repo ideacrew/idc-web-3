@@ -44,7 +44,6 @@ content:
         list: true
         fields:
           - name: title
-            label: Service Name
             type: string
             
       - name: clients
