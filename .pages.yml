@@ -10,10 +10,11 @@ content:
         type: string
       - { name: body, label: Body, type: rich-text }
   - name: config
-    label: Home Page Config
-    path: page-settings.yml
+    label: Home Page Settings
     type: file
+    path: page-settings.yml
     fields:
-      - name: title
-        label: Website title
-        type: string
+      - name: services
+        label: Services
+        type: object
+        list: true
