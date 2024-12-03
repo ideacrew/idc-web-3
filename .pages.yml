@@ -39,5 +39,5 @@ content:
             label: Logo
             type: image
             options:
-              path: /images/logos
+              path: public/images/logos
               extensions: [jpg, jpeg, png, webp, svg]
