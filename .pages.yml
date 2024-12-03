@@ -15,7 +15,6 @@ content:
     label: Home Page Settings
     type: file
     path: page-settings.yml
-    icon: file-sliders
     fields:
       - name: hero
         label: Hero
