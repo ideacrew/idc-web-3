@@ -18,3 +18,10 @@ content:
         label: Services
         type: object
         list: true
+        fields:
+         - name: name
+           label: Title
+           type: string
+         - name: description
+           label: Description
+           type: string
