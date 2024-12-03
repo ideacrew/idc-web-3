@@ -66,6 +66,9 @@ content:
               - name: text
                 label: Text
                 type: string
+              - name: link
+                label: Link
+                type: string                
 
       - name: services
         label: Services
