@@ -85,7 +85,7 @@ content:
         list: true
         fields:
           - name: name
-            label: Client Name
+            label: false
             type: string
 
           - name: logo
