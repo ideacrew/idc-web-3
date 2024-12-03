@@ -35,5 +35,7 @@ content:
            type: string
          - name: logo
            label: Logo
-           type: image           
+           type: image
+           options:
+            extensions: [ jpg, jpeg, png, webp, svg ]
            
