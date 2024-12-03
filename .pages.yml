@@ -44,6 +44,7 @@ content:
         list: true
         fields:
           - name: title
+            label: false
             type: string
             
       - name: clients
