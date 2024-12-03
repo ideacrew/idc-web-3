@@ -25,3 +25,15 @@ content:
          - name: description
            label: Description
            type: string
+      - name: clients
+        label: Select Clients
+        type: object
+        list: true
+        fields:
+         - name: name
+           label: Name
+           type: string
+         - name: logo
+           label: Logo
+           type: string           
+           
