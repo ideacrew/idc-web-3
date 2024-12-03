@@ -12,7 +12,8 @@ interface Service {
 const imageUrl = '/background.webp'
 const ctaImageUrl = '/image_1.png'
 
-const { services, clients } = pageSettings as {
+const { hero, services, clients } = pageSettings as {
+	hero: { heading: string; button1: { text: string; link: string }; button2: { text: string; link: string } }
 	services: Service[]
 	clients: { name: string; logo: string }[]
 }
@@ -76,21 +77,21 @@ const { services, clients } = pageSettings as {
 
 			<div class="z-10 px-4">
 				<h1 class="text-4xl md:text-5xl text-gray-800 mb-6 max-w-3xl mx-auto font-hero">
-					Strategy & technology solutions that help our clients solve their most important challenges
+					{hero.heading}
 				</h1>
 				<div class="flex space-x-4">
 					<Button
 						variant="outline"
 						size="lg"
 					>
-						<a href="/contact"> Get in Touch </a>
+						<a href={hero.button1.link}> {hero.button1.text} </a>
 					</Button>
 
 					<Button
 						variant="default"
 						size="lg"
 					>
-						<a href="/state-based-marketplace"> State-Based Marketplace </a>
+						<a href={hero.button2.link}> {hero.button2.text} </a>
 					</Button>
 				</div>
 			</div>
