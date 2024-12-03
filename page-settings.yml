@@ -10,26 +10,26 @@ services:
 
 clients:
   - name: DC Health Link
-    logo: /logos/dc-healthlink-logo.webp
+    logo: /images/logos/dc-healthlink-logo.webp
   - name: DC.gov
-    logo: /logos/dc-gov.webp
+    logo: /images/logos/dc-gov.webp
   - name: Connect for Health Colorado
-    logo: /logos/connect-health-colorado.webp
+    logo: /images/logos/connect-health-colorado.webp
   - name: MA Health Connector
-    logo: /logos/massachusetts-health-connector.webp
+    logo: /images/logos/massachusetts-health-connector.webp
   - name: FEMA
-    logo: /logos/fema.webp
+    logo: /images/logos/fema.webp
   - name: Pennsylvania DHS
-    logo: /logos/pennsylvania-department-human-services.webp
+    logo: /images/logos/pennsylvania-department-human-services.webp
   - name: Maryland DOH
-    logo: /logos/maryland-department-health.webp
+    logo: /images/logos/maryland-department-health.webp
   - name: Montgomery County
-    logo: /logos/montgomery-county-maryland.webp
+    logo: /images/logos/montgomery-county-maryland.webp
   - name: SHVS
-    logo: /logos/state-health-value-strategies.webp
+    logo: /images/logos/state-health-value-strategies.webp
   - name: Vermont Health Connect
-    logo: /logos/vermont-health-connect.webp
+    logo: /images/logos/vermont-health-connect.webp
   - name: DoDEA
-    logo: /logos/dodea.webp
+    logo: /images/logos/dodea.webp
   - name: RWJF
-    logo: /logos/robert-wood-johnson-foundation.webp
+    logo: /images/logos/robert-wood-johnson-foundation.webp
