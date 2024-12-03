@@ -1,9 +1,10 @@
 media:
   input: public/images
   output: /images
+  
 content:
   - name: config
-    label: Home Page Settings
+    label: Home Page
     type: file
     path: page-settings.yml
     fields:
