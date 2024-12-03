@@ -15,6 +15,7 @@ content:
           - name: heading
             label: Heading
             type: string
+            
           - name: button1
             label: Call to Action Button 1
             type: object
@@ -25,6 +26,7 @@ content:
               - name: link
                 label: Link
                 type: string
+                
           - name: button2
             label: Call to Action Button 2
             type: object
@@ -35,6 +37,7 @@ content:
               - name: link
                 label: Link
                 type: string
+                
       - name: services
         label: Services
         type: object
@@ -46,14 +49,16 @@ content:
           - name: description
             label: Description
             type: string
+            
       - name: clients
         label: Select Clients
         type: object
         list: true
         fields:
           - name: name
-            label: Name
+            label: Client Name
             type: string
+            
           - name: logo
             label: Logo
             type: image
@@ -61,8 +66,8 @@ content:
               path: public/images/logos
               extensions: [jpg, jpeg, png, webp, svg]
 
-  - name: pages
-    label: Pages
+  - name: about-pages
+    label: About Page
     type: file
     path: src/pages/about.md
     fields:
