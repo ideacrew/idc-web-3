@@ -24,25 +24,29 @@ content:
             label: Heading
             type: string
           - name: button1
-            label: CTA 1
+            label: Call to Action Button 1
             type: object
             fields:
               - name: text
                 label: Text
                 type: string
+                icon: rectangle-horizontal
               - name: link
                 label: Link
                 type: string
+                icon: link
           - name: button2
-            label: CTA 2
+            label: Call to Action Button 2
             type: object
             fields:
               - name: text
                 label: Text
                 type: string
+                icon: rectangle-horizontal
               - name: link
                 label: Link
                 type: string
+                icon: link
       - name: services
         label: Services
         type: object
