@@ -1,8 +1,10 @@
 hero:
   heading: Strategy & technology solutions that help our clients solve their most important challenges
+
   button1:
     text: Get in Touch
     link: /contact
+
   button2:
     text: State-Based Marketplace
     link: /state-based-marketplace
@@ -12,6 +14,7 @@ services:
   - title: Software Development
   - title: Data Integration
   - title: DevOps & Cloud
+
 clients:
   - name: DC Health Link
     logo: /images/logos/dc-healthlink-logo.webp
