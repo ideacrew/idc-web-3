@@ -19,7 +19,7 @@ content:
         type: object
         list: true
         fields:
-         - name: name
+         - name: title
            label: Title
            type: string
          - name: description
