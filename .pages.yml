@@ -30,11 +30,9 @@ content:
               - name: text
                 label: Text
                 type: string
-                icon: rectangle-horizontal
               - name: link
                 label: Link
                 type: string
-                icon: link
           - name: button2
             label: Call to Action Button 2
             type: object
@@ -42,11 +40,9 @@ content:
               - name: text
                 label: Text
                 type: string
-                icon: rectangle-horizontal
               - name: link
                 label: Link
                 type: string
-                icon: link
       - name: services
         label: Services
         type: object
