@@ -12,10 +12,11 @@ interface Service {
 const imageUrl = '/background.webp'
 const ctaImageUrl = '/image_1.png'
 
-const { hero, services, clients } = pageSettings as {
+const { hero, services, clients, sbmSection } = pageSettings as {
 	hero: { heading: string; button1: { text: string; link: string }; button2: { text: string; link: string } }
 	services: Service[]
 	clients: { name: string; logo: string }[]
+	sbmSection: { heading: string; cards: { title: string }[]; blurb: string; link: { text: string; url: string } }
 }
 ---
 
@@ -129,27 +130,22 @@ const { hero, services, clients } = pageSettings as {
 	<!-- SBM Section -->
 	<section class="py-20 bg-gray-50">
 		<div class="container max-w-[960px] mx-auto w-full">
-			<h2 class="text-3xl font-serif mb-8">State Based Marketplace Solution</h2>
+			<h2 class="text-3xl font-serif mb-8">{sbmSection.heading}</h2>
 			<div class="grid md:grid-cols-4 gap-8 mb-8">
 				{
-					['Individual', 'Employers', 'Employees', 'Brokers'].map(item => (
+					sbmSection.cards.map(card => (
 						<div class="p-6 bg-white rounded border border-gray-200">
-							<h3 class="text-xl">{item}</h3>
+							<h3 class="text-xl">{card.title}</h3>
 						</div>
 					))
 				}
 			</div>
-			<p class="max-w-3xl mb-8">
-				IdeaCrew's award winning State-based Marketplace (SBM) platform is a cloud-based, complete end-to-end
-				ACA-compliant solution for states, employers, employees and individuals to sponsor, shop and enroll in health
-				insurance and other benefits. Our platform's modular, flexible design supports different marketplace needs from
-				individuals to small business to large group enrollments.
-			</p>
+			<p class="max-w-3xl mb-8">{sbmSection.blurb}</p>
 			<a
-				href="/state-based-marketplace"
+				href={sbmSection.link.url}
 				class="text-blue-600 hover:underline"
 			>
-				Learn More About Our State Based Marketplace Solutions
+				{sbmSection.link.text}
 			</a>
 		</div>
 	</section>

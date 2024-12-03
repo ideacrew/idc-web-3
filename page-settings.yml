@@ -15,6 +15,25 @@ services:
   - title: Data Integration
   - title: DevOps & Cloud
 
+sbmSection:
+  heading: State Based Marketplace Solutions
+  cards:
+    - title: Individuals
+    - title: Employers
+    - title: Employees
+    - title: Brokers
+  blurb: |
+    IdeaCrew's award winning State-based Marketplace (SBM)
+    platform is a cloud-based, complete end-to-end ACA-compliant
+    solution for states, employers, employees and individuals
+    to sponsor, shop and enroll in health insurance and other benefits.
+    Our platform's modular, flexible design supports different
+    marketplace needs from individuals to small business to
+    large group enrollments.
+  link:
+    text: Learn More About Our State Based Marketplace Solutions
+    url: /state-based-marketplace
+
 clients:
   - name: DC Health Link
     logo: /images/logos/dc-healthlink-logo.webp
