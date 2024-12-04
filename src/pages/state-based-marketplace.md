@@ -1,6 +1,6 @@
 ---
 title: State Based Marketplace | IDEACREW
-layout: ../layouts/MainLayout.astro
+layout: ../layouts/PageLayout.astro
 ---
 
 # State-Based Marketplace

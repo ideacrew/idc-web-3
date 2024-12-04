@@ -1,6 +1,6 @@
 ---
 title: Our Work | IDEACREW
-layout: ../layouts/MainLayout.astro
+layout: ../layouts/PageLayout.astro
 ---
 
 # Our Work

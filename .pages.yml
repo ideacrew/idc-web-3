@@ -54,11 +54,11 @@ content:
               - name: title
                 label: false
                 type: string
-                
+
           - name: blurb
             label: Blurb
             type: text
-            
+
           - name: link
             label: Link
             type: object
@@ -68,7 +68,7 @@ content:
                 type: string
               - name: url
                 label: Link
-                type: string                
+                type: string
 
       - name: services
         label: Services
