@@ -34,7 +34,7 @@ content:
               - name: text
                 label: Text
                 type: string
-              - name: url
+              - name: link
                 label: Link
                 type: string
 
